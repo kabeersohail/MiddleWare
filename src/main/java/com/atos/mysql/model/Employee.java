@@ -12,18 +12,19 @@ public class Employee implements Serializable {
     private String email;
     private String jobTitle;
     private String imageUrl;
+    private String phone;
     private String employeeCode;
 
-    public Employee(Long id, String name, String email, String jobTitle, String imageUrl, String employeeCode) {
+    public Employee(){}
+
+    public Employee(Long id, String name, String email, String jobTitle, String imageUrl, String phone, String employeeCode) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
         this.imageUrl = imageUrl;
+        this.phone = phone;
         this.employeeCode = employeeCode;
-    }
-
-    public Employee() {
     }
 
     public Long getId() {
@@ -66,23 +67,19 @@ public class Employee implements Serializable {
         this.imageUrl = imageUrl;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEmployeeCode() {
         return employeeCode;
     }
 
     public void setEmployeeCode(String employeeCode) {
         this.employeeCode = employeeCode;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", jobTitle='" + jobTitle + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", employeeCode='" + employeeCode + '\'' +
-                '}';
     }
 }

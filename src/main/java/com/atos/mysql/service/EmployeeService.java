@@ -33,6 +33,7 @@ public class EmployeeService {
 
     public Employee updateEmployee(Employee employee)
     {
+        employee.setEmployeeCode(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
     }
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/employee")
@@ -40,6 +41,10 @@ public class EmployeeResource {
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee)
     {
+
+        
+            employee.setEmployeeCode(UUID.randomUUID().toString());
+
         Employee updateEmployee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updateEmployee,HttpStatus.OK);
     }
